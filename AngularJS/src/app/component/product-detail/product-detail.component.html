@@ -1,0 +1,76 @@
+<div
+  class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ml-3"
+>
+  <a href="#">
+    <img
+      class="p-8 rounded-t-lg"
+      src="{{ product.thumbnail }}"
+      alt="product image"
+    />
+  </a>
+  <div class="px-5 pb-5">
+    <a href="#">
+      <h5
+        class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white ml-5"
+      >
+        {{ product.title }}
+      </h5>
+    </a>
+    <div class="px-5 pb-5 mt-1">
+      <a href="#">
+        <h5
+          class="text-slate-50 font-semibold tracking-tight text-gray-900 dark:text-white"
+        >
+          {{ product.description }}
+        </h5>
+      </a>
+
+      <div class="flex items-center justify-between mt-2">
+        <span class="text-3xl font-bold text-gray-900 dark:text-white"
+          >${{ product.price }}</span
+        >
+        <button
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          (click)="onClick()"
+        >
+          Add to cart
+        </button>
+        <br />
+        <button
+          [ngStyle]="{
+            color: 'red',
+            backgroundColor: 'green',
+            padding: '10px'
+          }"
+        >
+          Thêm 2
+        </button>
+      </div>
+      <br />
+    </div>
+  </div>
+  <div
+    class="w-full max-w-sm bg-white border border-gray-300 rounded-lg shadow ml-96 relative -top-96"
+  >
+    <input
+      type="text"
+      class="border-1"
+      placeholder="Tên sản phẩm "
+      [(ngModel)]="productname"
+    />
+    <br />
+    <input
+      type="text"
+      class="border-1"
+      placeholder="image "
+      [(ngModel)]="thumbnail"
+    />
+    <br />
+    <input
+      type="number"
+      class="border-1"
+      placeholder="Tên sản phẩm "
+      [(ngModel)]="price"
+    />
+  </div>
+</div>

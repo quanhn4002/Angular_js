@@ -1,0 +1,27 @@
+<table
+  class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+>
+  <thead
+    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-cyan-950 dark:text-gray-400"
+  >
+    <tr>
+      <th scope="col" class="px-6 py-3">STT</th>
+      <th scope="col" class="px-6 py-3">Họ tên</th>
+      <th scope="col" class="px-6 py-3">Tuổi</th>
+      <th scope="col" class="px-6 py-3">Địa chỉ</th>
+      <th scope="col" class="px-6 py-3">Lớp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let student of students; index as i"
+      class="odd:bg-white odd:dark:bg-cyan-900 even:bg-gray-50 even:dark:bg-gray-700 border-b dark:border-gray-700"
+    >
+      <td class="px-6 py-4">{{ i + 1 }}</td>
+      <td class="px-6 py-4">{{ student.name }}</td>
+      <td class="px-6 py-4">{{ student.age }}</td>
+      <td class="px-6 py-4">{{ student.address }}</td>
+      <td class="px-6 py-4">{{ student.classname }}</td>
+    </tr>
+  </tbody>
+</table>
