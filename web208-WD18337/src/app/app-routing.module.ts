@@ -22,7 +22,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'dashboard',
+    path: 'admin/dashboard',
     component: AdminComponent,
     canActivate: [adminGuard],
     children: [

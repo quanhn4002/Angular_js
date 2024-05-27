@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { IStudent } from '../../../interface/student';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import axios from 'axios';
+import { StudentService } from '../../student.service';
 
 @Component({
   selector: 'app-add-student',
@@ -10,7 +11,6 @@ import axios from 'axios';
   styleUrl: './add-student.component.css',
 })
 export class AddStudentComponent {
-  constructor(public DomSanitizer: DomSanitizer) {}
   studentForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(7)]),
     age: new FormControl(1, [
@@ -25,13 +25,14 @@ export class AddStudentComponent {
     ]),
   });
 
-  onSubmit = async () => {
+  constructor(private StudentService: StudentService) {}
+  onSubmit = () => {
     // Lấy dữ liệu từ form
-    const studentdata: IStudent = this.studentForm.value as IStudent;
-    const { data } = await axios.post(
-      `http://localhost:3000/students`,
-      studentdata
-    );
-    alert('Thêm mới thành công');
+    this.StudentService.Add_Student(
+      this.studentForm.value as IStudent
+    ).subscribe((data) => {
+      this.studentForm;
+    });
+    alert('thêm thành công');
   };
 }

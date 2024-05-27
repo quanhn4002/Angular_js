@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { IStudent } from '../../../interface/student';
 import axios from 'axios';
+import { StudentService } from '../../student.service';
 
 @Component({
   selector: 'app-student-list',
@@ -10,9 +11,11 @@ import axios from 'axios';
 export class StudentListComponent {
   // @Input() students:IStudent[] = []
   // laayd ư
+  constructor(private StudentService: StudentService) {}
   studentss: IStudent[] = [];
-  async ngOnInit() {
-    const { data } = await axios.get('http://localhost:3000/students');
-    this.studentss = data;
+  ngOnInit() {
+    this.StudentService.Get_All_Students().subscribe((data) => {
+      this.studentss = data;
+    });
   }
 }
