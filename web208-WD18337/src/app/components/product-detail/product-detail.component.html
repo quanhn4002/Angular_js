@@ -1,17 +1,27 @@
-Đây là component con
-<div class="product-detail w-[500px] border-1 mx-auto">
-    <img src="{{product.thumbnail}}"/>
-    <h3 class="text-[26px]">{{product.title}}</h3>
-    <span>{{product.price}}</span>
-    <p>
-        <input type="text" class="border-1" placeholder="Tên SP" [(ngModel)]="productname"/>
-        <input type="text" class="border-1" placeholder="Ảnh sp" [(ngModel)]="image"/>
-        <input type="number" class="border-1" placeholder="Giá SP" [(ngModel)]="price"/>
-    </p>
-    <p>
-        Teen sp: {{productname}}
-    </p>
-    <p>
-        <button [ngStyle]="{backgroundColor:'green',color:'white',padding:'10px'}" type="button" (click)="onClick()">Thêm sản phẩm</button>
-    </p>
+<div class="grid grid-cols-2 gap-6 my-6">
+  <div class="flex flex-col">
+    <div class="w-full h-[500px]">
+      <img src="{{ product.thumbnail }}" alt="" />
+    </div>
+    <div class="flex gap-2 w-full my-4">
+      @for(image of product.images;track image){
+      <img
+        src="{{ image }}"
+        alt=""
+        class="max-w-[80px]"
+        (mouseover)="setThumbnail(image)"
+      />
+      }
+    </div>
+    <div>
+      <h1 class="text-[36px] font-bold">{{ product.title }}</h1>
+      <div class="price">
+        Giá:
+        <span class="text-[red] font-bold text-[24px]"
+          >${{ product.price }}</span
+        >
+      </div>
+      <p>{{ product.description }}</p>
+    </div>
+  </div>
 </div>

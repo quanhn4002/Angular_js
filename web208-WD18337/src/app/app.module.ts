@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { AddStudentComponent } from './components/add-student/add-student.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-import { ProductOneComponent } from './components/product-one/product-one.component';
+
+import { ClientComponent } from './layout/client/client.component';
+import { AdminComponent } from './layout/admin/admin.component';
+import { HomeComponent } from './components/home/home.component';
+import { EditStudentComponent } from './components/edit-student/edit-student.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,14 +26,14 @@ import { ProductOneComponent } from './components/product-one/product-one.compon
     AddStudentComponent,
     AddProductComponent,
     ProductListComponent,
-    ProductOneComponent
+
+    ClientComponent,
+    AdminComponent,
+    HomeComponent,
+    EditStudentComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

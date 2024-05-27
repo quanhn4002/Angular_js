@@ -1,6 +1,6 @@
 <div class="grid grid-cols-4 gap-6">
-  @for(product of productss; track product.title;let i = $index){
-  <div *ngIf="!loading" class="product-item">
+  @for(product of products; track product.title;let i = $index){
+  <div class="product-item">
     <div class="w-full h-[200px] overflow-hidden">
       <a href="product/{{ product.id }}">
         <img
@@ -13,14 +13,4 @@
     <span>{{ product.price }}</span>
   </div>
   }
-</div>
-<div class="lds-roller">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
 </div>

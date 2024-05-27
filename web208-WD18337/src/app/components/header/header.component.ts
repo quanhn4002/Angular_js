@@ -23,7 +23,7 @@ export class HeaderComponent {
     {
       id: 3,
       name: 'Products',
-      path: 'product',
+      path: 'products',
       parent: 0,
     },
     {
@@ -46,12 +46,9 @@ export class HeaderComponent {
     },
   ];
   checkChildrent = (menuid: number): boolean => {
-    //check menu có chứa menu con không
-    let check: boolean = false; //biến check
+    let check: boolean = false;
     for (let item of this.menus) {
-      //duyệt qua các menu
       if (item.parent === menuid) {
-        //nếu menu đó có parent = menuid thì trả về true
         check = true;
       }
     }

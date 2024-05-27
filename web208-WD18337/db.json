@@ -1,10 +1,36 @@
 {
   "products": [
     {
-      "id": "6a3b",
-      "name": "Sản phẩm abc",
-      "image": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-      "price": 10000
+      "id": 1,
+      "name": "Product 1",
+      "price": 100
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "price": 200
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "price": 300
+    }
+  ],
+  "users": [],
+  "students": [
+    {
+      "name": "cap nhap",
+      "age": 23,
+      "email": "a2d@gmail.com",
+      "phone": "0978434343",
+      "id": "1"
+    },
+    {
+      "name": "32232323",
+      "age": 12,
+      "email": "quan@gmai.com",
+      "phone": "09278323322",
+      "id": "aRIg4Dl"
     }
   ]
 }
