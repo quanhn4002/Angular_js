@@ -2,7 +2,12 @@
 <li>
   <a href="admin/dashboard/students">list</a>
 </li>
-<form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+
+<form
+  [formGroup]="studentForm"
+  (ngSubmit)="onSubmit()"
+  class="border max-w-[400px] mx-auto grid gap-4 grid-cols-1"
+>
   <input type="text" placeholder="tên sv" formControlName="name" />
   <span
     *ngIf="
@@ -17,17 +22,17 @@
   <input type="text" placeholder="Địa chỉ Email" formControlName="email" />
   <span
     *ngIf="
-    studentForm.controls.email.errors?.['email'] &&
-      (studentForm.controls.email.dirty || studentForm.controls.email.touched)
-    "
+      studentForm.controls.email.errors?.['email'] &&
+        (studentForm.controls.email.dirty || studentForm.controls.email.touched)
+      "
   >
     Email không đúng định dạng
   </span>
   <span
     *ngIf="
-    studentForm.controls.email.errors?.['required'] &&
-    (studentForm.controls.email.dirty || studentForm.controls.email.touched)
-  "
+      studentForm.controls.email.errors?.['required'] &&
+      (studentForm.controls.email.dirty || studentForm.controls.email.touched)
+    "
   >
     Email không được để trống
   </span>
