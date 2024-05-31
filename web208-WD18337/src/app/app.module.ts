@@ -15,8 +15,9 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ClientComponent } from './layout/client/client.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
-import { EditStudentComponent } from './components/edit-student/edit-student.component';
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { StudentEditComponent } from './components/student-edit/student-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ClientComponent,
     AdminComponent,
     HomeComponent,
-    EditStudentComponent,
+    StudentEditComponent,
   ],
   imports: [
     BrowserModule,

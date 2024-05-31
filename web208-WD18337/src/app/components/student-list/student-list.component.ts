@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IStudent } from '../../../interface/student';
 import axios from 'axios';
 import { StudentService } from '../../student.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-student-list',
@@ -9,13 +10,19 @@ import { StudentService } from '../../student.service';
   styleUrl: './student-list.component.css',
 })
 export class StudentListComponent {
-  // @Input() students:IStudent[] = []
-  // laayd ư
   constructor(private StudentService: StudentService) {}
-  studentss: IStudent[] = [];
+
+  students: IStudent[] = [];
   ngOnInit() {
     this.StudentService.Get_All_Students().subscribe((data) => {
-      this.studentss = data;
+      this.students = data;
     });
   }
+  onDelete = (id: any) => {
+    if (confirm('Bạn chắc chứ?')) {
+      this.StudentService.Delete_Student(id).subscribe((data) => {
+        this.students = this.students.filter((student) => student.id !== id);
+      });
+    }
+  };
 }

@@ -7,8 +7,9 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { adminGuard } from './Guard/admin.guard';
-import { EditStudentComponent } from './components/edit-student/edit-student.component';
+
 import { AddStudentComponent } from './components/add-student/add-student.component';
+import { StudentEditComponent } from './components/student-edit/student-edit.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,7 @@ const routes: Routes = [
     children: [
       { path: 'students', component: StudentListComponent },
       { path: 'students-add', component: AddStudentComponent },
-      { path: 'students-edit/:id', component: EditStudentComponent },
+      { path: 'students/edit/:id', component: StudentEditComponent },
     ],
   },
 ];

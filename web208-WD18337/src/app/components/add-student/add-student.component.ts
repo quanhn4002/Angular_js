@@ -4,6 +4,7 @@ import { IStudent } from '../../../interface/student';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import axios from 'axios';
 import { StudentService } from '../../student.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-student',
@@ -24,7 +25,7 @@ export class AddStudentComponent {
       Validators.pattern('0+[0-9]{10}$'),
     ]),
   });
-
+  route = new Router();
   constructor(private StudentService: StudentService) {}
   onSubmit = () => {
     // Lấy dữ liệu từ form
@@ -34,5 +35,6 @@ export class AddStudentComponent {
       this.studentForm;
     });
     alert('thêm thành công');
+    this.route.navigate(['/admin/dashboard/students']);
   };
 }

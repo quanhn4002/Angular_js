@@ -9,15 +9,28 @@
       <th class="p-2 border">Tuổi</th>
       <th class="p-2 border">Phone</th>
       <th class="p-2 border">Email</th>
+      <th class="p-2 border">Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let student of studentss; index as i">
+    <tr *ngFor="let student of students; index as i">
       <td class="border p-2">{{ i + 1 }}</td>
       <td class="border p-2">{{ student.name }}</td>
       <td class="border p-2">{{ student.age }}</td>
       <td class="border p-2">{{ student.phone }}</td>
       <td class="border p-2">{{ student.email }}</td>
+      <td>
+        <a
+          class="bg-slate-300 p-2"
+          href="admin/dashboard/students/edit/{{ student.id }}"
+          >Edit</a
+        >
+
+        <!-- Other student data display -->
+        <button class="bg-slate-300 p-2" (click)="onDelete(student.id)">
+          Delete
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

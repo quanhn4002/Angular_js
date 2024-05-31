@@ -1,4 +1,13 @@
-<form [formGroup]="studentForm" (ngSubmit)="onEditStudent()">
+<h1>THêm mới sinh viên</h1>
+<li>
+  <a href="admin/dashboard/students">list</a>
+</li>
+
+<form
+  [formGroup]="studentForm"
+  (ngSubmit)="onSubmit()"
+  class="border max-w-[400px] mx-auto grid gap-4 grid-cols-1"
+>
   <input type="text" placeholder="tên sv" formControlName="name" />
   <span
     *ngIf="
@@ -6,17 +15,24 @@
       (studentForm.controls.name.dirty || studentForm.controls.name.touched)
     "
   >
-    Tên không được để trống & >7 kí tự
+    Tên không được để trống &gt; 7 kí tự
   </span>
   <input type="number" placeholder="tuổi" formControlName="age" />
+
   <input type="text" placeholder="Địa chỉ Email" formControlName="email" />
   <span
-    *ngIf="studentForm.controls.email.errors?.['email']&&(studentForm.controls.email.dirty||studentForm.controls.email.touched)"
+    *ngIf="
+      studentForm.controls.email.errors?.['email'] &&
+        (studentForm.controls.email.dirty || studentForm.controls.email.touched)
+      "
   >
     Email không đúng định dạng
   </span>
   <span
-    *ngIf="studentForm.controls.email.errors?.['required']&&(studentForm.controls.email.dirty||studentForm.controls.email.touched)"
+    *ngIf="
+      studentForm.controls.email.errors?.['required'] &&
+      (studentForm.controls.email.dirty || studentForm.controls.email.touched)
+    "
   >
     Email không được để trống
   </span>
@@ -30,6 +46,6 @@
     Điện thoại không đúng định dạng
   </span>
   <button class="bg-slate-300" type="submit" [disabled]="!studentForm.valid">
-    Cập nhật
+    sửa sản phẩm
   </button>
 </form>
