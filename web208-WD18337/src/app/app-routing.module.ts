@@ -10,6 +10,8 @@ import { adminGuard } from './Guard/admin.guard';
 
 import { AddStudentComponent } from './components/add-student/add-student.component';
 import { StudentEditComponent } from './components/student-edit/student-edit.component';
+import { DangkiComponent } from './components/dangki/dangki.component';
+import { DangnhapComponent } from './components/dangnhap/dangnhap.component';
 
 const routes: Routes = [
   {
@@ -19,6 +21,8 @@ const routes: Routes = [
       { path: 'products', component: ProductListComponent },
       { path: 'home', component: HomeComponent },
       { path: 'product/:id', component: ProductDetailComponent },
+      { path: 'dangki', component: DangkiComponent },
+      { path: 'dangnhap', component: DangnhapComponent },
     ],
   },
 

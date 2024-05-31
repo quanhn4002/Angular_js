@@ -18,6 +18,8 @@ import { HomeComponent } from './components/home/home.component';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { StudentEditComponent } from './components/student-edit/student-edit.component';
+import { DangkiComponent } from './components/dangki/dangki.component';
+import { DangnhapComponent } from './components/dangnhap/dangnhap.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { StudentEditComponent } from './components/student-edit/student-edit.com
     AdminComponent,
     HomeComponent,
     StudentEditComponent,
+    DangkiComponent,
+    DangnhapComponent,
   ],
   imports: [
     BrowserModule,

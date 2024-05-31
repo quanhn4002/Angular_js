@@ -16,7 +16,38 @@
       "price": 300
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "email": "quanhainguyenlm@gmail.com",
+      "password": "$2a$10$5ZbWrrF2DoHOySvLWVeJqemRWhy8OHwaQKvXdYMaoB6cXVH57lFUe",
+      "name": "quanhai",
+      "id": 1
+    },
+    {
+      "email": "quan23@gmail.com",
+      "password": "$2a$10$Mc4bHYf37mXIeCrwwgvrmeORaex6I7hwXLT2JPQS6Qb0n647WlZeC",
+      "name": "Nguyễn Quân",
+      "id": 2
+    },
+    {
+      "email": "quan231@gmail.com",
+      "password": "$2a$10$0irUtB..PMGPMlj4gXx7s.P4WdfqbM.4n..5T5xKs7edkRPy3cgDS",
+      "name": "Nguyễn Quân11",
+      "id": 3
+    },
+    {
+      "email": "11222@gmail.com",
+      "password": "$2a$10$XxNIIwx9245Konaj9F1yvOyaAzmJmaMR5TlDYwVbH46svSYIcQjA6",
+      "name": "quanhai",
+      "id": 4
+    },
+    {
+      "email": "23@gmail.com",
+      "password": "$2a$10$AKEjqOYGoNPfb0jCAEwM0.JW9N7uATw2wSijoLGdkG3A0iNRiDczi",
+      "name": "2424242224242qeqe",
+      "id": 5
+    }
+  ],
   "students": [
     {
       "name": "Quan day update duoc r ne",
