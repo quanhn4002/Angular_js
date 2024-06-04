@@ -3,6 +3,7 @@ import { UserService } from './../../user.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IStudent } from '../../../interface/student';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-dangnhap',
@@ -11,8 +12,7 @@ import { IStudent } from '../../../interface/student';
 })
 export class DangnhapComponent {
   constructor(private UserService: UserService) {}
-  registerForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
+  loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
@@ -20,13 +20,23 @@ export class DangnhapComponent {
     ]),
   });
   route = new Router();
-  onSubmit = () => {
-    this.UserService.Register(this.registerForm.value as IStudent).subscribe(
+  // làm đăng nhập cho tôi
+  onSubmitLogin = () => {
+    this.UserService.Login(this.loginForm.value as IStudent).subscribe(
       (data) => {
-        this.registerForm;
+        localStorage.setItem('token', data?.accessToken);
+        alert('Đăng Nhập thành công');
+        this.router.navigate(['admin/dashboard']);
+      },
+      (error) => {
+        alert(error.error);
       }
     );
-    alert(' Đăng thành công');
-    this.route.navigate(['admin/dashboard/students']);
   };
+  router = new Router();
+  ngOnInit() {
+    if (this.UserService.CheckUserValid()) {
+      this.router.navigate(['admin/dashboard/students']);
+    }
+  }
 }

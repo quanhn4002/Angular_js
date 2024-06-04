@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IStudent } from '../../../interface/student';
 import axios from 'axios';
 import { StudentService } from '../../student.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-list',
@@ -24,5 +24,11 @@ export class StudentListComponent {
         this.students = this.students.filter((student) => student.id !== id);
       });
     }
+  };
+  router = new Router();
+  Logout = () => {
+    // localStorage.setItem('token
+    localStorage.removeItem('token');
+    this.router.navigate(['']);
   };
 }

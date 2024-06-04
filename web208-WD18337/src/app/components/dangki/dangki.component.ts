@@ -24,9 +24,12 @@ export class DangkiComponent {
     this.UserService.Register(this.registerForm.value as IStudent).subscribe(
       (data) => {
         this.registerForm;
+        alert('thêm thành công');
+        this.route.navigate(['/dangnhap']);
+      },
+      (error) => {
+        alert(error.error);
       }
     );
-    alert('thêm thành công');
-    this.route.navigate(['dangnhap']);
   };
 }
